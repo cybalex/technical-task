@@ -29,8 +29,15 @@ every animal has such ability. There are several issues and we hope you'd solve 
 * latest docker installed
 * latest docker-compose installed
 
-## Installation guide (for unix or ios):
-* ***cd path_of_project/docker*** from command line
-* ***cp .env.dist .env*** from command line from command line
-* [optional] modify environment variables as You like or need in **./docker/.env** file
-* ***docker-compose up --build -d*** (for debian/centos systems sudo privileges are needed) from command line
+## Installation guide (tested on unix):
+* Run ***cd path_of_project/docker*** from command line interface
+* Run ***cp .env.dist .env*** from command line from command line interface
+* Modify environment variables as You like in **./docker/.env** file **[optional]**
+ENVIRONMENT property possible values are *'prod'* and *'dev'* - this allows to load development or production php 
+configuration correspondingly
+* To build docker containers first time run ***docker-compose up --build -d*** (for debian/centos systems sudo 
+privileges are needed) from command line interface (if containers were built before, **--build** option could be 
+omitted)
+* To log into docker container run ***docker-compose exec php bin/bash*** from command line interface
+* Application is available at [localhost:8488](localhost:8488). The given Nginx port could be changed from .env
+file if needed
