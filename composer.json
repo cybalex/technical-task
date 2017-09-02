@@ -1,0 +1,14 @@
+{
+    "name": "cybalex/zoo",
+    "description": "Zoo simulator",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Oleksii Zymovets",
+            "email": "cybalex87@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
