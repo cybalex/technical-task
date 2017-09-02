@@ -31,13 +31,13 @@ every animal has such ability. There are several issues and we hope you'd solve 
 
 ## Installation guide (tested on unix):
 * Run ***cd path_of_project/docker*** from command line interface
-* Run ***cp .env.dist .env*** from command line from command line interface
-* Modify environment variables as You like in **./docker/.env** file **[optional]**
-ENVIRONMENT property possible values are *'prod'* and *'dev'* - this allows to load development or production php 
-configuration correspondingly
-* To build docker containers first time run ***docker-compose up --build -d*** (for debian/centos systems sudo 
-privileges are needed) from command line interface (if containers were built before, **--build** option could be 
-omitted)
+* Run ***cp .env.dist .env*** from command line interface to populate docker environment variables
+* **[optional]** Modify **./docker/.env** file to change environment variables. Tips and recommendations are:
+  * ENVIRONMENT property values are *'prod'* and *'dev'*, which allows to load development or production configuration 
+  correspondingly. Set value to *'dev'* to view errors on the app webpage
+  * change DOCKER_USER variable to set user name inside docker container
+  * Check ports for nginx and php (PHP_PORT and NGINX_PORT) to avoid port conflicts
+* To build docker containers first time run ***docker-compose up --build -d*** from command line interface. To start
+docker containers without rebuilding just omit **--build** parameter
 * To log into docker container run ***docker-compose exec php bin/bash*** from command line interface
-* Application is available at [localhost:8488](localhost:8488). The given Nginx port could be changed from .env
-file if needed
+* Application is available at [localhost:8488](localhost:8488), where 8488 is an nginx port, set in .env file.
