@@ -23,3 +23,14 @@ every animal has such ability. There are several issues and we hope you'd solve 
 * php 7
 * Unit tests
 * docker environment
+
+## Software requirements:
+
+* latest docker installed
+* latest docker-compose installed
+
+## Installation guide (for unix or ios):
+* ***cd path_of_project/docker*** from command line
+* ***cp .env.dist .env*** from command line from command line
+* [optional] modify environment variables as You like or need in **./docker/.env** file
+* ***docker-compose up --build -d*** (for debian/centos systems sudo privileges are needed) from command line

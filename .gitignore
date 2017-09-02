@@ -1,2 +1,5 @@
 /vendor/
 .idea
+.gitignore
+containers/
+docker-compose.yml
