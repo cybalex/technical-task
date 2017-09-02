@@ -40,4 +40,5 @@ every animal has such ability. There are several issues and we hope you'd solve 
 * To build docker containers first time run ***docker-compose up --build -d*** from command line interface. To start
 docker containers without rebuilding just omit **--build** parameter
 * To log into docker container run ***docker-compose exec php bin/bash*** from command line interface
+* To deploy app inside container run ***sh ./docker/deploy.sh*** in command line inside the root path of the app
 * Application is available at [localhost:8488](localhost:8488), where 8488 is an nginx port, set in .env file.
