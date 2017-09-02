@@ -2,7 +2,10 @@ version: "3.3"
 
 services:
     php:
-        build: ./containers/php7
+        build:
+            context: ./containers/php7
+            args:
+               DOCKER_USER: ${DOCKER_USER}
         ports:
             - ${PHP_PORT}:9000
         volumes:
@@ -13,12 +16,12 @@ services:
     nginx:
         image: nginx:alpine
         container_name: nginx
-        ports:
-            - ${NGINX_PORT}:80
         volumes:
             - ${SOURCE_VOLUME}:/www
             - ./containers/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
             - ./log/nginx:/var/log/nginx
+        ports:
+            - ${NGINX_PORT}:80
         links:
             - php
         tty: true
