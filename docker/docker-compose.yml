@@ -1,0 +1,10 @@
+version: "3.3"
+
+services:
+    php:
+        build: ./containers/php7
+        ports:
+            - ${PHP_PORT}:9000
+        volumes:
+            - ${SOURCE_VOLUME}:/www
+        tty: true
