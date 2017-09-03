@@ -2,10 +2,12 @@
 
 namespace Zoo\Animal;
 
+use Zoo\Animal\Action\EatInterface;
+
 /**
  * Class AbstractAnimal
  */
-abstract class AbstractAnimal
+abstract class AbstractAnimal implements EatInterface
 {
     /**
      * @var string
@@ -23,7 +25,7 @@ abstract class AbstractAnimal
         $this->name = empty($name) ? $class : $class." ".$name;
     }
 
-    function __toString()
+    function __toString(): string
     {
         return static::getName();
     }
@@ -34,5 +36,13 @@ abstract class AbstractAnimal
     public function getName(): string
     {
         return $this->name;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function eat(string $food): string
+    {
+        return static::getName().' eats '.$food.PHP_EOL;
     }
 }

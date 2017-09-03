@@ -10,7 +10,7 @@ interface AttackInterface
     /**
      * @param string|object $victim
      *
-     * @return mixed
+     * @return string
      */
-    public function attack($victim);
+    public function byte($victim): string;
 }

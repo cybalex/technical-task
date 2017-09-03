@@ -3,12 +3,12 @@
 namespace Zoo\Animal\Action;
 
 /**
- * Interface WalkInterface
+ * Interface SwimInterface
  */
-interface WalkInterface
+interface SwimInterface
 {
     /**
      * @return string
      */
-    public function walk(): string;
+    public function swim(): string;
 }

@@ -7,5 +7,10 @@ namespace Zoo\Animal\Action;
  */
 interface EatInterface
 {
-    public function eat(): ?string;
+    /**
+     * @param string $food
+     *
+     * @return string
+     */
+    public function eat(string $food): string;
 }

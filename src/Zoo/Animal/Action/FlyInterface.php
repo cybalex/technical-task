@@ -8,7 +8,7 @@ namespace Zoo\Animal\Action;
 interface FlyInterface
 {
     /**
-     * @return null|string
+     * @return string
      */
-    public function fly(): ?string;
+    public function fly(): string;
 }
