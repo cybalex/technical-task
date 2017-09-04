@@ -43,3 +43,6 @@ docker containers without rebuilding just omit **--build** parameter
 * To deploy app inside container run ***sh ./docker/deploy.sh*** from command line interface inside the root path of 
 the app
 * Application is available at [localhost:8488](localhost:8488), where 8488 is an nginx port, set in .env file.
+
+## Testing
+To run phpunit tests do sh path_to_project/docker/deploy.sh t

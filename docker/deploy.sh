@@ -14,6 +14,7 @@ help () {
     echo '      c    - composer install'
     echo '      g    - git pull'
     echo '      gc   - git pull and composer install'
+    echo '      t    - run tests'
     echo '      h    - show help'
     echo
     echo 'Usage examples:'
@@ -35,6 +36,11 @@ composer_install () {
     docker-compose exec $container_name /bin/sh -c "cd /www \
         && composer install \
         && echo '[x] composer install --no-interaction OK'"
+}
+
+run_tests () {
+    composer_install
+    docker-compose exec $container_name /bin/bash -c "/www/vendor/bin/phpunit -c /www/phpunit.xml.dist"
 }
 
 countdown () {
@@ -89,6 +95,11 @@ else
             composer_install
             echo All done!
             exit 0
+        fi
+
+        if [ $1 = t ]; then
+            echo 'Running phpunit tests...'
+            run_tests
         fi
 
         if [ $1 = h ]; then
