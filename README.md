@@ -30,19 +30,19 @@ every animal has such ability. There are several issues and we hope you'd solve 
 * latest docker-compose installed
 
 ## Installation guide (tested on unix):
-* Run ***cd path_of_project/docker*** from command line interface
-* Run ***cp .env.dist .env*** from command line interface to populate docker environment variables
+* Run `cd path_of_project/docker` from command line interface
+* Run `cp .env.dist .env` from command line interface to populate docker environment variables
 * **[optional]** Modify **./docker/.env** file to change environment variables. Tips and recommendations are:
   * ENVIRONMENT property values are *'prod'* and *'dev'*, which allows to load development or production configuration 
   correspondingly. Set value to *'dev'* to view errors on the app webpage
   * change DOCKER_USER variable to set user name inside docker container
   * Check ports for nginx and php (PHP_PORT and NGINX_PORT) to avoid port conflicts
-* To build docker containers first time run ***docker-compose up --build -d*** from command line interface. To start
+* To build docker containers first time run `docker-compose up --build -d` from command line interface. To start
 docker containers without rebuilding just omit **--build** parameter
-* To log into docker container run ***docker-compose exec php bin/bash*** from command line interface
-* To deploy app inside container run ***sh ./docker/deploy.sh*** from command line interface inside the root path of 
+* To log into docker container run `docker-compose exec php bin/bash` from command line interface
+* To deploy app inside container run `sh ./docker/deploy.sh` from command line interface inside the root path of 
 the app
 * Application is available at [localhost:8488](localhost:8488), where 8488 is an nginx port, set in .env file.
 
 ## Testing
-To run phpunit tests run ***sh path_to_project/docker/deploy.sh t*** from command line interface
+To run phpunit tests run `sh path_to_project/docker/deploy.sh t` from command line interface
