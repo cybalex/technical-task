@@ -45,4 +45,4 @@ the app
 * Application is available at [localhost:8488](localhost:8488), where 8488 is an nginx port, set in .env file.
 
 ## Testing
-To run phpunit tests do sh path_to_project/docker/deploy.sh t
+To run phpunit tests run ***sh path_to_project/docker/deploy.sh t*** from command line interface
