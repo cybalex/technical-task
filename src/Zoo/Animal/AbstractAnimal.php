@@ -12,7 +12,7 @@ abstract class AbstractAnimal implements EatInterface
     /**
      * @var string
      */
-    public $name;
+    protected $name;
 
     /**
      * AbstractAnimal constructor
@@ -22,9 +22,12 @@ abstract class AbstractAnimal implements EatInterface
     public function __construct(string $name = null)
     {
         $class = strtolower((new \ReflectionClass(static::class))->getShortName());
-        $this->name = empty($name) ? $class : $class." ".$name;
+        $this->name = empty($name) ? ucfirst($class) : ucfirst($class)." ".$name;
     }
 
+    /**
+     * @return string
+     */
     function __toString(): string
     {
         return static::getName();

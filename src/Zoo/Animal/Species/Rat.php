@@ -1,6 +1,7 @@
 <?php
 
 namespace Zoo\Animal\Species;
+
 use Zoo\Animal\AnimalClass\Mammal;
 
 /**

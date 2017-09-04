@@ -13,7 +13,7 @@ class Dog extends Mammal implements AttackInterface
     /**
      * {@inheritdoc}
      */
-    public function byte($object)
+    public function byte($object): string
     {
         return $this->getName().' has bitten '.$object.PHP_EOL;
     }

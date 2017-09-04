@@ -9,8 +9,11 @@ use Zoo\Animal\AnimalClass\Bird;
  */
 class Sparrow extends Bird
 {
+    /**
+     * @return string
+     */
     public function tweet(): string
     {
-        return $this->getName().' tweet';
+        return $this->getName().' tweets';
     }
 }

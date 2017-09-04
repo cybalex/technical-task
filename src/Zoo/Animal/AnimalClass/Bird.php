@@ -9,7 +9,7 @@ use Zoo\Animal\Action\WalkInterface;
 /**
  * Class Bird
  */
-class Bird extends AbstractAnimal implements FlyInterface, WalkInterface
+abstract class Bird extends AbstractAnimal implements FlyInterface, WalkInterface
 {
     /**
      * {@inheritdoc}

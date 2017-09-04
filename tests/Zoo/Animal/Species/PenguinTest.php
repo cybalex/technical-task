@@ -12,18 +12,12 @@ use Zoo\Exception\InvalidBehaviourException;
 class PenguinTest extends TestCase
 {
     /**
-     * @var Penguin
+     * Test penguin cannot fly
      */
-    private $penguin;
-
-    public function setUp()
-    {
-        $this->penguin = new Penguin('Freddy');
-    }
-
     public function testFly()
     {
+        $penguin = new Penguin('Freddy');
         $this->expectException(InvalidBehaviourException::class);
-        $this->penguin->fly();
+        $penguin->fly();
     }
 }
