@@ -12,7 +12,6 @@ class AbstractAnimalTest extends TestCase
     public function testName()
     {
         $abstractAnimal = $this->getMockForAbstractClass('\Zoo\Animal\AbstractAnimal', ['the_name']);
-
-        $this->assertTrue(strpos($abstractAnimal->getName(), 'the_name') > -1);
+        $this->assertStringEndsWith('the_name', $abstractAnimal->getName());
     }
 }

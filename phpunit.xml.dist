@@ -14,4 +14,12 @@
             <directory>tests</directory>
         </testsuite>
     </testsuites>
+
+    <filter>
+        <whitelist>
+            <directory>./src/Zoo/</directory>
+            <exclude>
+            </exclude>
+        </whitelist>
+    </filter>
 </phpunit>

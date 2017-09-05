@@ -14,6 +14,23 @@ RUN curl -LsS https://getcomposer.org/download/1.5.1/composer.phar -o /usr/local
 RUN chmod a+x /usr/local/bin/composer
 RUN composer self-update --no-interaction
 
+
+# Install Xdebug
+#Taken from https://hub.docker.com/r/connectmedica/php7.1-xdebug/~/dockerfile/
+RUN curl -fsSL 'https://xdebug.org/files/xdebug-2.5.1.tgz' -o xdebug.tar.gz \
+    && mkdir -p xdebug \
+    && tar -xf xdebug.tar.gz -C xdebug --strip-components=1 \
+    && rm xdebug.tar.gz \
+    && ( \
+    cd xdebug \
+    && phpize \
+    && ./configure --enable-xdebug \
+    && make -j$(nproc) \
+    && make install \
+    ) \
+    && rm -r xdebug \
+    && docker-php-ext-enable xdebug
+
 # add user
 ARG DOCKER_USER
 RUN useradd -ms /bin/bash $DOCKER_USER

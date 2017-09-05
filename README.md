@@ -45,4 +45,6 @@ the app
 * Application is available at [localhost:8488](localhost:8488), where 8488 is an nginx port, set in .env file.
 
 ## Testing
-To run phpunit tests run `sh path_to_project/docker/deploy.sh t` from command line interface
+* To run phpunit tests run `sh path_to_project/docker/deploy.sh t` from command line interface
+* To generate code coverage report run `sh path_to_project/docker/deploy.sh tcc` from command line interface. Code
+coverage report is being generated in html format and can be found under **path_to_project/var/coverage/** directory.

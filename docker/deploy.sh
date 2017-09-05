@@ -43,6 +43,12 @@ run_tests () {
     docker-compose exec $container_name /bin/bash -c "/www/vendor/bin/phpunit -c /www/phpunit.xml.dist"
 }
 
+tests_code_coverage () {
+    composer_install
+    docker-compose exec $container_name /bin/bash -c "/www/vendor/bin/phpunit -c /www/phpunit.xml.dist \
+        --coverage-html ./var/coverage/"
+}
+
 countdown () {
     echo 'Starting execution in 5 seconds'
     echo Press Ctrl+C to cancel
@@ -100,6 +106,13 @@ else
         if [ $1 = t ]; then
             echo 'Running phpunit tests...'
             run_tests
+            exit 0
+        fi
+
+        if [ $1 = tcc ]; then
+            echo 'Running phpunit tests...'
+            tests_code_coverage
+            exit 0
         fi
 
         if [ $1 = h ]; then
